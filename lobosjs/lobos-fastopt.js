@@ -2757,6 +2757,78 @@ $e.lobos.DimensionParams = (function(arg$1, arg$2, arg$3) {
 });
 $e.lobos.DimensionParams.prototype = $c_Llobos_DimensionParams.prototype;
 /** @constructor */
+function $c_Llobos_Test() {
+  $c_O.call(this);
+  this.d$1 = 0;
+  this.a$1 = 0
+}
+$c_Llobos_Test.prototype = new $h_O();
+$c_Llobos_Test.prototype.constructor = $c_Llobos_Test;
+/** @constructor */
+function $h_Llobos_Test() {
+  /*<skip>*/
+}
+$h_Llobos_Test.prototype = $c_Llobos_Test.prototype;
+$c_Llobos_Test.prototype.productPrefix__T = (function() {
+  return "Test"
+});
+$c_Llobos_Test.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Llobos_Test.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.d$1;
+      break
+    }
+    case 1: {
+      return this.a$1;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Llobos_Test.prototype.init___I__I = (function(d, a) {
+  this.d$1 = d;
+  this.a$1 = a;
+  return this
+});
+$c_Llobos_Test.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Llobos_Test.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, this.d$1);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, this.a$1);
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 2)
+});
+$c_Llobos_Test.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+var $d_Llobos_Test = new $TypeData().initClass({
+  Llobos_Test: 0
+}, false, "lobos.Test", {
+  Llobos_Test: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Llobos_Test.prototype.$classData = $d_Llobos_Test;
+$e.lobos = ($e.lobos || {});
+/** @constructor */
+$e.lobos.Test = (function(arg$1, arg$2) {
+  var $thiz = new $c_Llobos_Test();
+  var prep0 = $uI(arg$1);
+  var prep1 = $uI(arg$2);
+  $c_Llobos_Test.prototype.init___I__I.call($thiz, prep0, prep1);
+  return $thiz
+});
+$e.lobos.Test.prototype = $c_Llobos_Test.prototype;
+/** @constructor */
 function $c_jl_ArithmeticException() {
   $c_jl_RuntimeException.call(this)
 }

@@ -1971,46 +1971,48 @@ function $h_Llobos_Sobol() {
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
   var this$1 = this.seq$1;
-  var this$3 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
-  var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(x$1$2) {
-    var x$1 = $as_sc_IndexedSeq(x$1$2);
-    var this$2 = $m_sjsr_package$();
-    if ($is_sjs_js_ArrayOps(x$1)) {
-      var x2 = $as_sjs_js_ArrayOps(x$1);
+  var this$5 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
+  var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(sample$2) {
+    var sample = $as_sc_IndexedSeq(sample$2);
+    var col = $m_s_Predef$().wrapDoubleArray__AD__scm_WrappedArray($asArrayOf_D(sample.toArray__s_reflect_ClassTag__O($m_s_reflect_ManifestFactory$DoubleManifest$()), 1));
+    if ($is_sjs_js_ArrayOps(col)) {
+      var x2 = $as_sjs_js_ArrayOps(col);
       return x2.scala$scalajs$js$ArrayOps$$array$f
-    } else if ($is_sjs_js_WrappedArray(x$1)) {
-      var x3 = $as_sjs_js_WrappedArray(x$1);
+    } else if ($is_sjs_js_WrappedArray(col)) {
+      var x3 = $as_sjs_js_WrappedArray(col);
       return x3.array$6
     } else {
       var result = [];
-      x$1.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
-        return (function(x$2) {
-          return $uI(result$1.push(x$2))
-        })
-      })(this$2, result)));
+      var i = 0;
+      var len = col.length__I();
+      while ((i < len)) {
+        var arg1 = col.apply__I__O(i);
+        $uI(result.push(arg1));
+        i = ((1 + i) | 0)
+      };
       return result
     }
   }));
-  var this$5 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$3, f);
+  var this$7 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$5, f);
   var evidence$1 = new $c_s_reflect_ClassTag$ClassClassTag().init___jl_Class($d_sjs_js_Array.getClassOf());
-  var jsArrays = $asArrayOf_sjs_js_Array($s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this$5, evidence$1), 1);
-  var col = $m_s_Predef$().wrapRefArray__AO__scm_WrappedArray(jsArrays);
-  if ($is_sjs_js_ArrayOps(col)) {
-    var x2$1 = $as_sjs_js_ArrayOps(col);
+  var jsArrays = $asArrayOf_sjs_js_Array($s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this$7, evidence$1), 1);
+  var col$1 = $m_s_Predef$().wrapRefArray__AO__scm_WrappedArray(jsArrays);
+  if ($is_sjs_js_ArrayOps(col$1)) {
+    var x2$1 = $as_sjs_js_ArrayOps(col$1);
     return x2$1.scala$scalajs$js$ArrayOps$$array$f
-  } else if ($is_sjs_js_WrappedArray(col)) {
-    var x3$1 = $as_sjs_js_WrappedArray(col);
+  } else if ($is_sjs_js_WrappedArray(col$1)) {
+    var x3$1 = $as_sjs_js_WrappedArray(col$1);
     return x3$1.array$6
   } else {
-    var result$2 = [];
-    var i = 0;
-    var len = col.length__I();
-    while ((i < len)) {
-      var arg1 = col.apply__I__O(i);
-      $uI(result$2.push(arg1));
-      i = ((1 + i) | 0)
+    var result$1 = [];
+    var i$1 = 0;
+    var len$1 = col$1.length__I();
+    while ((i$1 < len$1)) {
+      var arg1$1 = col$1.apply__I__O(i$1);
+      $uI(result$1.push(arg1$1));
+      i$1 = ((1 + i$1) | 0)
     };
-    return result$2
+    return result$1
   }
 });
 $c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
@@ -2382,6 +2384,9 @@ $c_s_LowPriorityImplicits.prototype.wrapRefArray__AO__scm_WrappedArray = (functi
 });
 $c_s_LowPriorityImplicits.prototype.wrapLongArray__AJ__scm_WrappedArray = (function(xs) {
   return ((xs !== null) ? new $c_scm_WrappedArray$ofLong().init___AJ(xs) : null)
+});
+$c_s_LowPriorityImplicits.prototype.wrapDoubleArray__AD__scm_WrappedArray = (function(xs) {
+  return ((xs !== null) ? new $c_scm_WrappedArray$ofDouble().init___AD(xs) : null)
 });
 /** @constructor */
 function $c_s_math_Ordered$() {
@@ -3316,6 +3321,18 @@ $c_sjsr_RuntimeString$.prototype.indexOf__T__I__I__I = (function(thiz, ch, fromI
 });
 $c_sjsr_RuntimeString$.prototype.valueOf__O__T = (function(value) {
   return ((value === null) ? "null" : $objectToString(value))
+});
+$c_sjsr_RuntimeString$.prototype.toCharArray__T__AC = (function(thiz) {
+  var length = $uI(thiz.length);
+  var result = $newArrayObject($d_C.getArrayOf(), [length]);
+  var i = 0;
+  while ((i < length)) {
+    var jsx$1 = i;
+    var index = i;
+    result.u[jsx$1] = (65535 & $uI(thiz.charCodeAt(index)));
+    i = ((1 + i) | 0)
+  };
+  return result
 });
 $c_sjsr_RuntimeString$.prototype.lastIndexOf__T__I__I = (function(thiz, ch) {
   var str = this.fromCodePoint__p1__I__T(ch);
@@ -13112,6 +13129,23 @@ $c_scm_WrappedArray.prototype.copyToArray__O__I__I__V = (function(xs, start, len
 $c_scm_WrappedArray.prototype.hashCode__I = (function() {
   return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
 });
+$c_scm_WrappedArray.prototype.toArray__s_reflect_ClassTag__O = (function(evidence$1) {
+  if ($is_jl_Class(evidence$1)) {
+    var x2 = $as_jl_Class(evidence$1);
+    var thatElementClass = x2.getComponentType__jl_Class()
+  } else if ((evidence$1 !== null)) {
+    var thatElementClass = evidence$1.runtimeClass__jl_Class()
+  } else {
+    var thatElementClass;
+    throw new $c_jl_UnsupportedOperationException().init___T(new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["unsupported schematic ", " (", ")"])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([evidence$1, $objectGetClass(evidence$1)])))
+  };
+  return ((this.elementClass__p5__jl_Class() === thatElementClass) ? this.array__O() : $s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this, evidence$1))
+});
+$c_scm_WrappedArray.prototype.elementClass__p5__jl_Class = (function() {
+  var this$1 = this.array__O();
+  var schematic = $objectGetClass(this$1);
+  return schematic.getComponentType__jl_Class()
+});
 $c_scm_WrappedArray.prototype.newBuilder__scm_Builder = (function() {
   return new $c_scm_WrappedArrayBuilder().init___s_reflect_ClassTag(this.elemTag__s_reflect_ClassTag())
 });
@@ -14554,6 +14588,11 @@ $c_scm_StringBuilder.prototype.sizeHint__I__V = (function(size) {
 });
 $c_scm_StringBuilder.prototype.hashCode__I = (function() {
   return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
+});
+$c_scm_StringBuilder.prototype.toArray__s_reflect_ClassTag__O = (function(evidence$1) {
+  var jsx$1 = $m_sjsr_RuntimeString$();
+  var this$1 = this.underlying$5;
+  return jsx$1.toCharArray__T__AC(this$1.content$1)
 });
 $c_scm_StringBuilder.prototype.append__C__scm_StringBuilder = (function(x) {
   this.underlying$5.append__C__jl_StringBuilder(x);

@@ -1971,12 +1971,9 @@ function $h_Llobos_Sobol() {
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
   var this$1 = this.seq$1;
-  var this$8 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
+  var this$5 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
   var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(sample$2) {
     var sample = $as_sc_IndexedSeq(sample$2);
-    var this$3 = $m_s_Console$();
-    var this$4 = $as_Ljava_io_PrintStream(this$3.outVar$2.v$1);
-    this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((sample + "\n"));
     var col = $m_s_Predef$().wrapDoubleArray__AD__scm_WrappedArray($asArrayOf_D(sample.toArray__s_reflect_ClassTag__O($m_s_reflect_ManifestFactory$DoubleManifest$()), 1));
     if ($is_sjs_js_ArrayOps(col)) {
       var x2 = $as_sjs_js_ArrayOps(col);
@@ -1996,15 +1993,9 @@ $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
       return result
     }
   }));
-  var this$10 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$8, f);
+  var this$7 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$5, f);
   var evidence$1 = new $c_s_reflect_ClassTag$ClassClassTag().init___jl_Class($d_sjs_js_Array.getClassOf());
-  var jsArrays = $asArrayOf_sjs_js_Array($s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this$10, evidence$1), 1);
-  var this$12 = $m_s_Console$();
-  var this$13 = $as_Ljava_io_PrintStream(this$12.outVar$2.v$1);
-  this$13.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
-  var this$15 = $m_s_Console$();
-  var this$16 = $as_Ljava_io_PrintStream(this$15.outVar$2.v$1);
-  this$16.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
+  var jsArrays = $asArrayOf_sjs_js_Array($s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this$7, evidence$1), 1);
   var col$1 = $m_s_Predef$().wrapRefArray__AO__scm_WrappedArray(jsArrays);
   if ($is_sjs_js_ArrayOps(col$1)) {
     var x2$1 = $as_sjs_js_ArrayOps(col$1);

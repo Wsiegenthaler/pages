@@ -2001,14 +2001,14 @@ $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
     elems$2.push(unboxedElem);
     i = ((1 + i) | 0)
   };
-  var jsArrays = $makeNativeArrayWrapper($d_sjs_js_Array.getArrayOf(), elems$2);
-  var this$14 = $m_s_Console$();
-  var this$15 = $as_Ljava_io_PrintStream(this$14.outVar$2.v$1);
-  this$15.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
-  var this$17 = $m_s_Console$();
-  var this$18 = $as_Ljava_io_PrintStream(this$17.outVar$2.v$1);
-  this$18.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
-  return [jsArrays]
+  var xs$1 = $makeNativeArrayWrapper($d_sjs_js_Array.getArrayOf(), elems$2);
+  var this$19 = $m_s_Console$();
+  var this$20 = $as_Ljava_io_PrintStream(this$19.outVar$2.v$1);
+  this$20.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
+  var this$22 = $m_s_Console$();
+  var this$23 = $as_Ljava_io_PrintStream(this$22.outVar$2.v$1);
+  this$23.java$lang$JSConsoleBasedPrintStream$$printString__T__V((xs$1 + "\n"));
+  return [xs$1]
 });
 $c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
   return this.next__sjs_js_Array()

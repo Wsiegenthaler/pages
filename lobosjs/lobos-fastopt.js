@@ -1972,18 +1972,18 @@ $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
   var this$1 = this.seq$1;
   var this$3 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
-  var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(sample$2) {
-    var sample = $as_sc_IndexedSeq(sample$2);
+  var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(x$1$2) {
+    var x$1 = $as_sc_IndexedSeq(x$1$2);
     var this$2 = $m_sjsr_package$();
-    if ($is_sjs_js_ArrayOps(sample)) {
-      var x2 = $as_sjs_js_ArrayOps(sample);
+    if ($is_sjs_js_ArrayOps(x$1)) {
+      var x2 = $as_sjs_js_ArrayOps(x$1);
       return x2.scala$scalajs$js$ArrayOps$$array$f
-    } else if ($is_sjs_js_WrappedArray(sample)) {
-      var x3 = $as_sjs_js_WrappedArray(sample);
+    } else if ($is_sjs_js_WrappedArray(x$1)) {
+      var x3 = $as_sjs_js_WrappedArray(x$1);
       return x3.array$6
     } else {
       var result = [];
-      sample.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
+      x$1.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
         return (function(x$2) {
           return $uI(result$1.push(x$2))
         })

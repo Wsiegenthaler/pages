@@ -1919,19 +1919,11 @@ function $h_Llobos_Sobol() {
 }
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
-  var this$2 = $m_s_Console$();
-  var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
-  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
-  var this$4 = this.seq$1;
-  var x = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$4, 0, n);
-  var this$6 = $m_s_Console$();
-  var this$7 = $as_Ljava_io_PrintStream(this$6.outVar$2.v$1);
-  this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-  var this$8 = this.seq$1;
-  var this$10 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$8, 0, n);
+  var this$1 = this.seq$1;
+  var this$3 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
   var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(x$1$2) {
     var x$1 = $as_sc_IndexedSeq(x$1$2);
-    var this$9 = $m_sjsr_package$();
+    var this$2 = $m_sjsr_package$();
     if ($is_sjs_js_ArrayOps(x$1)) {
       var x2 = $as_sjs_js_ArrayOps(x$1);
       return x2.scala$scalajs$js$ArrayOps$$array$f
@@ -1944,34 +1936,18 @@ $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
         return (function(x$2) {
           return $uI(result$1.push(x$2))
         })
-      })(this$9, result)));
+      })(this$2, result)));
       return result
     }
   }));
-  var this$11 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$10, f);
-  var col = $s_sc_Iterator$class__toStream__sc_Iterator__sci_Stream(this$11);
-  if ($is_sjs_js_ArrayOps(col)) {
-    var x2$1 = $as_sjs_js_ArrayOps(col);
-    return x2$1.scala$scalajs$js$ArrayOps$$array$f
-  } else if ($is_sjs_js_WrappedArray(col)) {
-    var x3$1 = $as_sjs_js_WrappedArray(col);
-    return x3$1.array$6
-  } else {
-    var result$2 = [];
-    var _$this = col;
-    x: {
-      _foreach: while (true) {
-        if ((!_$this.isEmpty__Z())) {
-          var arg1 = _$this.head__O();
-          $uI(result$2.push(arg1));
-          _$this = $as_sci_Stream(_$this.tail__O());
-          continue _foreach
-        };
-        break x
-      }
-    };
-    return result$2
-  }
+  var jsArrays = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$3, f);
+  var this$5 = $m_s_Console$();
+  var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
+  this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
+  var this$8 = $m_s_Console$();
+  var this$9 = $as_Ljava_io_PrintStream(this$8.outVar$2.v$1);
+  this$9.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
+  return [jsArrays]
 });
 $c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
   return this.next__sjs_js_Array()

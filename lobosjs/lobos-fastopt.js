@@ -1918,6 +1918,61 @@ function $h_Llobos_Sobol() {
   /*<skip>*/
 }
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
+$c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
+  var this$2 = $m_s_Console$();
+  var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
+  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
+  var this$4 = this.seq$1;
+  var x = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$4, 0, n);
+  var this$6 = $m_s_Console$();
+  var this$7 = $as_Ljava_io_PrintStream(this$6.outVar$2.v$1);
+  this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+  var this$8 = this.seq$1;
+  var this$10 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$8, 0, n);
+  var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(x$1$2) {
+    var x$1 = $as_sc_IndexedSeq(x$1$2);
+    var this$9 = $m_sjsr_package$();
+    if ($is_sjs_js_ArrayOps(x$1)) {
+      var x2 = $as_sjs_js_ArrayOps(x$1);
+      return x2.scala$scalajs$js$ArrayOps$$array$f
+    } else if ($is_sjs_js_WrappedArray(x$1)) {
+      var x3 = $as_sjs_js_WrappedArray(x$1);
+      return x3.array$6
+    } else {
+      var result = [];
+      x$1.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
+        return (function(x$2) {
+          return $uI(result$1.push(x$2))
+        })
+      })(this$9, result)));
+      return result
+    }
+  }));
+  var this$11 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$10, f);
+  var col = $s_sc_Iterator$class__toStream__sc_Iterator__sci_Stream(this$11);
+  if ($is_sjs_js_ArrayOps(col)) {
+    var x2$1 = $as_sjs_js_ArrayOps(col);
+    return x2$1.scala$scalajs$js$ArrayOps$$array$f
+  } else if ($is_sjs_js_WrappedArray(col)) {
+    var x3$1 = $as_sjs_js_WrappedArray(col);
+    return x3$1.array$6
+  } else {
+    var result$2 = [];
+    var _$this = col;
+    x: {
+      _foreach: while (true) {
+        if ((!_$this.isEmpty__Z())) {
+          var arg1 = _$this.head__O();
+          $uI(result$2.push(arg1));
+          _$this = $as_sci_Stream(_$this.tail__O());
+          continue _foreach
+        };
+        break x
+      }
+    };
+    return result$2
+  }
+});
 $c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
   return this.next__sjs_js_Array()
 });
@@ -1926,8 +1981,7 @@ $c_Llobos_Sobol.prototype.init___I = (function(dims) {
   return this
 });
 $c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
-  var this$1 = this.seq$1;
-  return $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n)
+  return this.take__I__sjs_js_Array(n)
 });
 $c_Llobos_Sobol.prototype.$$js$exported$prop$seq__O = (function() {
   return this.seq$1
@@ -7442,6 +7496,45 @@ var $d_sc_Iterator$$anon$10 = new $TypeData().initClass({
   sc_GenTraversableOnce: 1
 });
 $c_sc_Iterator$$anon$10.prototype.$classData = $d_sc_Iterator$$anon$10;
+/** @constructor */
+function $c_sc_Iterator$$anon$11() {
+  $c_sc_AbstractIterator.call(this);
+  this.$$outer$2 = null;
+  this.f$3$2 = null
+}
+$c_sc_Iterator$$anon$11.prototype = new $h_sc_AbstractIterator();
+$c_sc_Iterator$$anon$11.prototype.constructor = $c_sc_Iterator$$anon$11;
+/** @constructor */
+function $h_sc_Iterator$$anon$11() {
+  /*<skip>*/
+}
+$h_sc_Iterator$$anon$11.prototype = $c_sc_Iterator$$anon$11.prototype;
+$c_sc_Iterator$$anon$11.prototype.next__O = (function() {
+  return this.f$3$2.apply__O__O(this.$$outer$2.next__O())
+});
+$c_sc_Iterator$$anon$11.prototype.init___sc_Iterator__F1 = (function($$outer, f$3) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$2 = $$outer
+  };
+  this.f$3$2 = f$3;
+  return this
+});
+$c_sc_Iterator$$anon$11.prototype.hasNext__Z = (function() {
+  return this.$$outer$2.hasNext__Z()
+});
+var $d_sc_Iterator$$anon$11 = new $TypeData().initClass({
+  sc_Iterator$$anon$11: 0
+}, false, "scala.collection.Iterator$$anon$11", {
+  sc_Iterator$$anon$11: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1
+});
+$c_sc_Iterator$$anon$11.prototype.$classData = $d_sc_Iterator$$anon$11;
 /** @constructor */
 function $c_sc_Iterator$$anon$2() {
   $c_sc_AbstractIterator.call(this)

@@ -1907,6 +1907,90 @@ function $s_scm_ResizableArray$class__$$init$__scm_ResizableArray__V($$this) {
   $$this.size0$6 = 0
 }
 /** @constructor */
+function $c_Llobos_Sobol() {
+  $c_O.call(this);
+  this.seq$1 = null
+}
+$c_Llobos_Sobol.prototype = new $h_O();
+$c_Llobos_Sobol.prototype.constructor = $c_Llobos_Sobol;
+/** @constructor */
+function $h_Llobos_Sobol() {
+  /*<skip>*/
+}
+$h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
+$c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
+  return this.next__sjs_js_Array()
+});
+$c_Llobos_Sobol.prototype.init___I = (function(dims) {
+  this.seq$1 = new $c_Llobos_SobolSequence().init___I__J__Llobos_SobolParams(dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
+  return this
+});
+$c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
+  var this$1 = this.seq$1;
+  return $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n)
+});
+$c_Llobos_Sobol.prototype.$$js$exported$prop$seq__O = (function() {
+  return this.seq$1
+});
+$c_Llobos_Sobol.prototype.next__sjs_js_Array = (function() {
+  var this$2 = $m_s_Console$();
+  var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
+  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("next\n");
+  var x = this.seq$1.next__sc_IndexedSeq();
+  var this$5 = $m_s_Console$();
+  var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
+  this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+  var this$7 = $m_sjsr_package$();
+  var col = this.seq$1.next__sc_IndexedSeq();
+  if ($is_sjs_js_ArrayOps(col)) {
+    var x2 = $as_sjs_js_ArrayOps(col);
+    return x2.scala$scalajs$js$ArrayOps$$array$f
+  } else if ($is_sjs_js_WrappedArray(col)) {
+    var x3 = $as_sjs_js_WrappedArray(col);
+    return x3.array$6
+  } else {
+    var result = [];
+    col.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
+      return (function(x$2) {
+        return $uI(result$1.push(x$2))
+      })
+    })(this$7, result)));
+    return result
+  }
+});
+$c_Llobos_Sobol.prototype.take = (function(arg$1) {
+  var prep0 = $uI(arg$1);
+  return this.$$js$exported$meth$take__I__O(prep0)
+});
+Object.defineProperty($c_Llobos_Sobol.prototype, "next", {
+  "get": (function() {
+    return this.$$js$exported$prop$next__O()
+  }),
+  "enumerable": true
+});
+Object.defineProperty($c_Llobos_Sobol.prototype, "seq", {
+  "get": (function() {
+    return this.$$js$exported$prop$seq__O()
+  }),
+  "enumerable": true
+});
+var $d_Llobos_Sobol = new $TypeData().initClass({
+  Llobos_Sobol: 0
+}, false, "lobos.Sobol", {
+  Llobos_Sobol: 1,
+  O: 1
+});
+$c_Llobos_Sobol.prototype.$classData = $d_Llobos_Sobol;
+$e.lobos = ($e.lobos || {});
+/** @constructor */
+$e.lobos.Sobol = (function(arg$1) {
+  var $thiz = new $c_Llobos_Sobol();
+  var prep0 = $uI(arg$1);
+  $c_Llobos_Sobol.prototype.init___I.call($thiz, prep0);
+  return $thiz
+});
+$e.lobos.Sobol.prototype = $c_Llobos_Sobol.prototype;
+/** @constructor */
 function $c_Llobos_SobolSequence$() {
   $c_O.call(this);
   this.maxBits$1 = 0
@@ -5133,6 +5217,9 @@ function $h_Llobos_SobolSequence() {
   /*<skip>*/
 }
 $h_Llobos_SobolSequence.prototype = $c_Llobos_SobolSequence.prototype;
+$c_Llobos_SobolSequence.prototype.next__O = (function() {
+  return this.next__sc_IndexedSeq()
+});
 $c_Llobos_SobolSequence.prototype.seq__sc_TraversableOnce = (function() {
   return this
 });
@@ -5253,6 +5340,16 @@ $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq = (function() {
   var bf$1 = $m_sc_IndexedSeq$().ReusableCBF$6;
   return $as_sc_IndexedSeq($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(x$3, f, bf$1))
 });
+var $d_Llobos_SobolSequence = new $TypeData().initClass({
+  Llobos_SobolSequence: 0
+}, false, "lobos.SobolSequence", {
+  Llobos_SobolSequence: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1
+});
+$c_Llobos_SobolSequence.prototype.$classData = $d_Llobos_SobolSequence;
 function $is_T(obj) {
   return ((typeof obj) === "string")
 }
@@ -6633,84 +6730,6 @@ var $d_Llobos_DimensionParams = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Llobos_DimensionParams.prototype.$classData = $d_Llobos_DimensionParams;
-/** @constructor */
-function $c_Llobos_Sobol() {
-  $c_Llobos_SobolSequence.call(this)
-}
-$c_Llobos_Sobol.prototype = new $h_Llobos_SobolSequence();
-$c_Llobos_Sobol.prototype.constructor = $c_Llobos_Sobol;
-/** @constructor */
-function $h_Llobos_Sobol() {
-  /*<skip>*/
-}
-$h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
-$c_Llobos_Sobol.prototype.next__O = (function() {
-  return this.next__sjs_js_WrappedArray()
-});
-$c_Llobos_Sobol.prototype.$$js$exported$meth$next__O = (function() {
-  return this.next__sjs_js_WrappedArray()
-});
-$c_Llobos_Sobol.prototype.next__sjs_js_WrappedArray = (function() {
-  var this$2 = $m_s_Console$();
-  var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
-  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("next\n");
-  var x = $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this);
-  var this$5 = $m_s_Console$();
-  var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
-  this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-  var this$7 = $m_sjsr_package$();
-  var col = $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this);
-  if ($is_sjs_js_ArrayOps(col)) {
-    var x2 = $as_sjs_js_ArrayOps(col);
-    var array = x2.scala$scalajs$js$ArrayOps$$array$f
-  } else if ($is_sjs_js_WrappedArray(col)) {
-    var x3 = $as_sjs_js_WrappedArray(col);
-    var array = x3.array$6
-  } else {
-    var result = [];
-    col.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
-      return (function(x$2) {
-        return $uI(result$1.push(x$2))
-      })
-    })(this$7, result)));
-    var array = result
-  };
-  return new $c_sjs_js_WrappedArray().init___sjs_js_Array(array)
-});
-$c_Llobos_Sobol.prototype.init___I = (function(dims) {
-  $c_Llobos_SobolSequence.prototype.init___I__J__Llobos_SobolParams.call(this, dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
-  return this
-});
-$c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
-  return $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this, 0, n)
-});
-$c_Llobos_Sobol.prototype.take = (function(arg$1) {
-  var prep0 = $uI(arg$1);
-  return this.$$js$exported$meth$take__I__O(prep0)
-});
-$c_Llobos_Sobol.prototype.next = (function() {
-  return this.$$js$exported$meth$next__O()
-});
-var $d_Llobos_Sobol = new $TypeData().initClass({
-  Llobos_Sobol: 0
-}, false, "lobos.Sobol", {
-  Llobos_Sobol: 1,
-  Llobos_SobolSequence: 1,
-  O: 1,
-  sc_Iterator: 1,
-  sc_TraversableOnce: 1,
-  sc_GenTraversableOnce: 1
-});
-$c_Llobos_Sobol.prototype.$classData = $d_Llobos_Sobol;
-$e.lobos = ($e.lobos || {});
-/** @constructor */
-$e.lobos.Sobol = (function(arg$1) {
-  var $thiz = new $c_Llobos_Sobol();
-  var prep0 = $uI(arg$1);
-  $c_Llobos_Sobol.prototype.init___I.call($thiz, prep0);
-  return $thiz
-});
-$e.lobos.Sobol.prototype = $c_Llobos_Sobol.prototype;
 /** @constructor */
 function $c_Llobos_SobolSequence$$anonfun$5() {
   $c_sr_AbstractFunction1.call(this);

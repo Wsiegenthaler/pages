@@ -1918,22 +1918,9 @@ function $h_Llobos_Sobol() {
   /*<skip>*/
 }
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
-$c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
-  return this.next__sjs_js_Array()
-});
-$c_Llobos_Sobol.prototype.init___I = (function(dims) {
-  this.seq$1 = new $c_Llobos_SobolSequence().init___I__J__Llobos_SobolParams(dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
-  return this
-});
-$c_Llobos_Sobol.prototype.$$js$exported$prop$take__O = (function() {
-  return this.take__sjs_js_Array()
-});
-$c_Llobos_Sobol.prototype.$$js$exported$prop$seq__O = (function() {
-  return this.seq$1
-});
-$c_Llobos_Sobol.prototype.take__sjs_js_Array = (function() {
+$c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
   var this$1 = this.seq$1;
-  var this$3 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, 3);
+  var this$3 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
   var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(sample$2) {
     var sample = $as_sc_IndexedSeq(sample$2);
     var this$2 = $m_sjsr_package$();
@@ -1962,6 +1949,19 @@ $c_Llobos_Sobol.prototype.take__sjs_js_Array = (function() {
   this$9.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
   return [jsArrays]
 });
+$c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
+  return this.next__sjs_js_Array()
+});
+$c_Llobos_Sobol.prototype.init___I = (function(dims) {
+  this.seq$1 = new $c_Llobos_SobolSequence().init___I__J__Llobos_SobolParams(dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
+  return this
+});
+$c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
+  return this.take__I__sjs_js_Array(n)
+});
+$c_Llobos_Sobol.prototype.$$js$exported$prop$seq__O = (function() {
+  return this.seq$1
+});
 $c_Llobos_Sobol.prototype.next__sjs_js_Array = (function() {
   var this$2 = $m_s_Console$();
   var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
@@ -1988,11 +1988,9 @@ $c_Llobos_Sobol.prototype.next__sjs_js_Array = (function() {
     return result
   }
 });
-Object.defineProperty($c_Llobos_Sobol.prototype, "take", {
-  "get": (function() {
-    return this.$$js$exported$prop$take__O()
-  }),
-  "enumerable": true
+$c_Llobos_Sobol.prototype.take = (function(arg$1) {
+  var prep0 = $uI(arg$1);
+  return this.$$js$exported$meth$take__I__O(prep0)
 });
 Object.defineProperty($c_Llobos_Sobol.prototype, "next", {
   "get": (function() {

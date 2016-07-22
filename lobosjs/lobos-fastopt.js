@@ -1971,20 +1971,40 @@ function $h_Llobos_Sobol() {
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
   var this$1 = this.seq$1;
-  var this$4 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
+  var this$8 = $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this$1, 0, n);
   var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(sample$2) {
     var sample = $as_sc_IndexedSeq(sample$2);
-    return $asArrayOf_D(sample.toArray__s_reflect_ClassTag__O($m_s_reflect_ManifestFactory$DoubleManifest$()), 1)
+    var this$3 = $m_s_Console$();
+    var this$4 = $as_Ljava_io_PrintStream(this$3.outVar$2.v$1);
+    this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((sample + "\n"));
+    var col = $m_s_Predef$().wrapDoubleArray__AD__scm_WrappedArray($asArrayOf_D(sample.toArray__s_reflect_ClassTag__O($m_s_reflect_ManifestFactory$DoubleManifest$()), 1));
+    if ($is_sjs_js_ArrayOps(col)) {
+      var x2 = $as_sjs_js_ArrayOps(col);
+      return x2.scala$scalajs$js$ArrayOps$$array$f
+    } else if ($is_sjs_js_WrappedArray(col)) {
+      var x3 = $as_sjs_js_WrappedArray(col);
+      return x3.array$6
+    } else {
+      var result = [];
+      var i = 0;
+      var len = col.length__I();
+      while ((i < len)) {
+        var arg1 = col.apply__I__O(i);
+        $uI(result.push(arg1));
+        i = ((1 + i) | 0)
+      };
+      return result
+    }
   }));
-  var this$8 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$4, f);
-  var evidence$1 = new $c_s_reflect_ClassTag$ClassClassTag().init___jl_Class($d_D.getArrayOf().getClassOf());
-  var jsArrays = $asArrayOf_D($s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this$8, evidence$1), 2);
-  var this$10 = $m_s_Console$();
-  var this$11 = $as_Ljava_io_PrintStream(this$10.outVar$2.v$1);
-  this$11.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
-  var this$13 = $m_s_Console$();
-  var this$14 = $as_Ljava_io_PrintStream(this$13.outVar$2.v$1);
-  this$14.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
+  var this$10 = new $c_sc_Iterator$$anon$11().init___sc_Iterator__F1(this$8, f);
+  var evidence$1 = new $c_s_reflect_ClassTag$ClassClassTag().init___jl_Class($d_sjs_js_Array.getClassOf());
+  var jsArrays = $asArrayOf_sjs_js_Array($s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this$10, evidence$1), 1);
+  var this$12 = $m_s_Console$();
+  var this$13 = $as_Ljava_io_PrintStream(this$12.outVar$2.v$1);
+  this$13.java$lang$JSConsoleBasedPrintStream$$printString__T__V("take\n");
+  var this$15 = $m_s_Console$();
+  var this$16 = $as_Ljava_io_PrintStream(this$15.outVar$2.v$1);
+  this$16.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
   return [jsArrays]
 });
 $c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
@@ -2346,6 +2366,9 @@ function $h_s_LowPriorityImplicits() {
 $h_s_LowPriorityImplicits.prototype = $c_s_LowPriorityImplicits.prototype;
 $c_s_LowPriorityImplicits.prototype.wrapLongArray__AJ__scm_WrappedArray = (function(xs) {
   return ((xs !== null) ? new $c_scm_WrappedArray$ofLong().init___AJ(xs) : null)
+});
+$c_s_LowPriorityImplicits.prototype.wrapDoubleArray__AD__scm_WrappedArray = (function(xs) {
+  return ((xs !== null) ? new $c_scm_WrappedArray$ofDouble().init___AD(xs) : null)
 });
 /** @constructor */
 function $c_s_math_Ordered$() {
@@ -5132,6 +5155,22 @@ function $m_scm_StringBuilder$() {
   };
   return $n_scm_StringBuilder$
 }
+function $isArrayOf_sjs_js_Array(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sjs_js_Array)))
+}
+function $asArrayOf_sjs_js_Array(obj, depth) {
+  return (($isArrayOf_sjs_js_Array(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.scalajs.js.Array;", depth))
+}
+var $d_sjs_js_Array = new $TypeData().initClass({
+  sjs_js_Array: 0
+}, false, "scala.scalajs.js.Array", {
+  sjs_js_Array: 1,
+  sjs_js_Object: 1,
+  O: 1,
+  sjs_js_Any: 1
+}, true, (void 0), (function(x) {
+  return (x instanceof $g.Array)
+}));
 /** @constructor */
 function $c_sjsr_AnonFunction0() {
   $c_sr_AbstractFunction0.call(this);

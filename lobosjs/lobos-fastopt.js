@@ -1278,6 +1278,15 @@ function $s_sc_Iterator$class__foreach__sc_Iterator__F1__V($$this, f) {
     f.apply__O__O($$this.next__O())
   }
 }
+function $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator($$this, from, until) {
+  var lo = ((from > 0) ? from : 0);
+  var toDrop = lo;
+  while (((toDrop > 0) && $$this.hasNext__Z())) {
+    $$this.next__O();
+    toDrop = (((-1) + toDrop) | 0)
+  };
+  return new $c_sc_Iterator$$anon$10().init___sc_Iterator__I__I($$this, lo, until)
+}
 function $s_sc_Iterator$class__forall__sc_Iterator__F1__Z($$this, p) {
   var res = true;
   while ((res && $$this.hasNext__Z())) {
@@ -2022,6 +2031,67 @@ var $d_jl_Class = new $TypeData().initClass({
 });
 $c_jl_Class.prototype.$classData = $d_jl_Class;
 /** @constructor */
+function $c_jl_System$() {
+  $c_O.call(this);
+  this.out$1 = null;
+  this.err$1 = null;
+  this.in$1 = null;
+  this.getHighPrecisionTime$1 = null
+}
+$c_jl_System$.prototype = new $h_O();
+$c_jl_System$.prototype.constructor = $c_jl_System$;
+/** @constructor */
+function $h_jl_System$() {
+  /*<skip>*/
+}
+$h_jl_System$.prototype = $c_jl_System$.prototype;
+$c_jl_System$.prototype.init___ = (function() {
+  $n_jl_System$ = this;
+  this.out$1 = new $c_jl_JSConsoleBasedPrintStream().init___jl_Boolean(false);
+  this.err$1 = new $c_jl_JSConsoleBasedPrintStream().init___jl_Boolean(true);
+  this.in$1 = null;
+  var x = $g.performance;
+  if ($uZ((!(!x)))) {
+    var x$1 = $g.performance.now;
+    if ($uZ((!(!x$1)))) {
+      var jsx$1 = (function() {
+        return $uD($g.performance.now())
+      })
+    } else {
+      var x$2 = $g.performance.webkitNow;
+      if ($uZ((!(!x$2)))) {
+        var jsx$1 = (function() {
+          return $uD($g.performance.webkitNow())
+        })
+      } else {
+        var jsx$1 = (function() {
+          return $uD(new $g.Date().getTime())
+        })
+      }
+    }
+  } else {
+    var jsx$1 = (function() {
+      return $uD(new $g.Date().getTime())
+    })
+  };
+  this.getHighPrecisionTime$1 = jsx$1;
+  return this
+});
+var $d_jl_System$ = new $TypeData().initClass({
+  jl_System$: 0
+}, false, "java.lang.System$", {
+  jl_System$: 1,
+  O: 1
+});
+$c_jl_System$.prototype.$classData = $d_jl_System$;
+var $n_jl_System$ = (void 0);
+function $m_jl_System$() {
+  if ((!$n_jl_System$)) {
+    $n_jl_System$ = new $c_jl_System$().init___()
+  };
+  return $n_jl_System$
+}
+/** @constructor */
 function $c_jl_reflect_Array$() {
   $c_O.call(this)
 }
@@ -2089,6 +2159,17 @@ function $m_ju_Arrays$() {
   };
   return $n_ju_Arrays$
 }
+/** @constructor */
+function $c_s_DeprecatedConsole() {
+  $c_O.call(this)
+}
+$c_s_DeprecatedConsole.prototype = new $h_O();
+$c_s_DeprecatedConsole.prototype.constructor = $c_s_DeprecatedConsole;
+/** @constructor */
+function $h_s_DeprecatedConsole() {
+  /*<skip>*/
+}
+$h_s_DeprecatedConsole.prototype = $c_s_DeprecatedConsole.prototype;
 /** @constructor */
 function $c_s_FallbackArrayBuilding() {
   $c_O.call(this)
@@ -2342,6 +2423,32 @@ function $m_s_reflect_package$() {
   };
   return $n_s_reflect_package$
 }
+/** @constructor */
+function $c_s_util_DynamicVariable() {
+  $c_O.call(this);
+  this.v$1 = null
+}
+$c_s_util_DynamicVariable.prototype = new $h_O();
+$c_s_util_DynamicVariable.prototype.constructor = $c_s_util_DynamicVariable;
+/** @constructor */
+function $h_s_util_DynamicVariable() {
+  /*<skip>*/
+}
+$h_s_util_DynamicVariable.prototype = $c_s_util_DynamicVariable.prototype;
+$c_s_util_DynamicVariable.prototype.toString__T = (function() {
+  return (("DynamicVariable(" + this.v$1) + ")")
+});
+$c_s_util_DynamicVariable.prototype.init___O = (function(init) {
+  this.v$1 = init;
+  return this
+});
+var $d_s_util_DynamicVariable = new $TypeData().initClass({
+  s_util_DynamicVariable: 0
+}, false, "scala.util.DynamicVariable", {
+  s_util_DynamicVariable: 1,
+  O: 1
+});
+$c_s_util_DynamicVariable.prototype.$classData = $d_s_util_DynamicVariable;
 /** @constructor */
 function $c_s_util_Either$() {
   $c_O.call(this)
@@ -3962,6 +4069,17 @@ var $d_sr_ObjectRef = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_sr_ObjectRef.prototype.$classData = $d_sr_ObjectRef;
+/** @constructor */
+function $c_Ljava_io_OutputStream() {
+  $c_O.call(this)
+}
+$c_Ljava_io_OutputStream.prototype = new $h_O();
+$c_Ljava_io_OutputStream.prototype.constructor = $c_Ljava_io_OutputStream;
+/** @constructor */
+function $h_Ljava_io_OutputStream() {
+  /*<skip>*/
+}
+$h_Ljava_io_OutputStream.prototype = $c_Ljava_io_OutputStream.prototype;
 var $d_jl_Boolean = new $TypeData().initClass({
   jl_Boolean: 0
 }, false, "java.lang.Boolean", {
@@ -4152,6 +4270,43 @@ function $m_jl_Integer$() {
   return $n_jl_Integer$
 }
 /** @constructor */
+function $c_s_Console$() {
+  $c_s_DeprecatedConsole.call(this);
+  this.outVar$2 = null;
+  this.errVar$2 = null;
+  this.inVar$2 = null
+}
+$c_s_Console$.prototype = new $h_s_DeprecatedConsole();
+$c_s_Console$.prototype.constructor = $c_s_Console$;
+/** @constructor */
+function $h_s_Console$() {
+  /*<skip>*/
+}
+$h_s_Console$.prototype = $c_s_Console$.prototype;
+$c_s_Console$.prototype.init___ = (function() {
+  $n_s_Console$ = this;
+  this.outVar$2 = new $c_s_util_DynamicVariable().init___O($m_jl_System$().out$1);
+  this.errVar$2 = new $c_s_util_DynamicVariable().init___O($m_jl_System$().err$1);
+  this.inVar$2 = new $c_s_util_DynamicVariable().init___O(null);
+  return this
+});
+var $d_s_Console$ = new $TypeData().initClass({
+  s_Console$: 0
+}, false, "scala.Console$", {
+  s_Console$: 1,
+  s_DeprecatedConsole: 1,
+  O: 1,
+  s_io_AnsiColor: 1
+});
+$c_s_Console$.prototype.$classData = $d_s_Console$;
+var $n_s_Console$ = (void 0);
+function $m_s_Console$() {
+  if ((!$n_s_Console$)) {
+    $n_s_Console$ = new $c_s_Console$().init___()
+  };
+  return $n_s_Console$
+}
+/** @constructor */
 function $c_s_Predef$() {
   $c_s_LowPriorityImplicits.call(this);
   this.Map$2 = null;
@@ -4170,6 +4325,11 @@ function $h_s_Predef$() {
   /*<skip>*/
 }
 $h_s_Predef$.prototype = $c_s_Predef$.prototype;
+$c_s_Predef$.prototype.assert__Z__V = (function(assertion) {
+  if ((!assertion)) {
+    throw new $c_jl_AssertionError().init___O("assertion failed")
+  }
+});
 $c_s_Predef$.prototype.init___ = (function() {
   $n_s_Predef$ = this;
   $m_s_package$();
@@ -4183,11 +4343,6 @@ $c_s_Predef$.prototype.init___ = (function() {
   this.singleton$und$less$colon$less$2 = new $c_s_Predef$$anon$1().init___();
   this.scala$Predef$$singleton$und$eq$colon$eq$f = new $c_s_Predef$$anon$2().init___();
   return this
-});
-$c_s_Predef$.prototype.assert__Z__V = (function(assertion) {
-  if ((!assertion)) {
-    throw new $c_jl_AssertionError().init___O("assertion failed")
-  }
 });
 $c_s_Predef$.prototype.require__Z__V = (function(requirement) {
   if ((!requirement)) {
@@ -4944,6 +5099,22 @@ var $d_sr_Nothing$ = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 /** @constructor */
+function $c_Ljava_io_FilterOutputStream() {
+  $c_Ljava_io_OutputStream.call(this);
+  this.out$2 = null
+}
+$c_Ljava_io_FilterOutputStream.prototype = new $h_Ljava_io_OutputStream();
+$c_Ljava_io_FilterOutputStream.prototype.constructor = $c_Ljava_io_FilterOutputStream;
+/** @constructor */
+function $h_Ljava_io_FilterOutputStream() {
+  /*<skip>*/
+}
+$h_Ljava_io_FilterOutputStream.prototype = $c_Ljava_io_FilterOutputStream.prototype;
+$c_Ljava_io_FilterOutputStream.prototype.init___Ljava_io_OutputStream = (function(out) {
+  this.out$2 = out;
+  return this
+});
+/** @constructor */
 function $c_Llobos_SobolSequence() {
   $c_O.call(this);
   this.dims$1 = 0;
@@ -5204,6 +5375,30 @@ var $d_jl_Integer = new $TypeData().initClass({
 }, (void 0), (void 0), (function(x) {
   return $isInt(x)
 }));
+/** @constructor */
+function $c_jl_JSConsoleBasedPrintStream$DummyOutputStream() {
+  $c_Ljava_io_OutputStream.call(this)
+}
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype = new $h_Ljava_io_OutputStream();
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.constructor = $c_jl_JSConsoleBasedPrintStream$DummyOutputStream;
+/** @constructor */
+function $h_jl_JSConsoleBasedPrintStream$DummyOutputStream() {
+  /*<skip>*/
+}
+$h_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype = $c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype;
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.init___ = (function() {
+  return this
+});
+var $d_jl_JSConsoleBasedPrintStream$DummyOutputStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream$DummyOutputStream", {
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  Ljava_io_Flushable: 1
+});
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream$DummyOutputStream;
 function $isArrayOf_jl_Long(obj, depth) {
   return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_Long)))
 }
@@ -6450,29 +6645,34 @@ function $h_Llobos_Sobol() {
 }
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.next__O = (function() {
-  return $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this)
+  return this.next__sc_IndexedSeq()
 });
 $c_Llobos_Sobol.prototype.$$js$exported$meth$next__O = (function() {
-  return $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this)
-});
-$c_Llobos_Sobol.prototype.$$js$exported$prop$hasNext__O = (function() {
-  return $c_Llobos_SobolSequence.prototype.hasNext__Z.call(this)
+  return this.next__sc_IndexedSeq()
 });
 $c_Llobos_Sobol.prototype.init___I = (function(dims) {
   $c_Llobos_SobolSequence.prototype.init___I__J__Llobos_SobolParams.call(this, dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
   return this
 });
-$c_Llobos_Sobol.prototype.hasNext__Z = (function() {
-  return $c_Llobos_SobolSequence.prototype.hasNext__Z.call(this)
+$c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
+  return $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this, 0, n)
+});
+$c_Llobos_Sobol.prototype.next__sc_IndexedSeq = (function() {
+  var this$2 = $m_s_Console$();
+  var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
+  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("next\n");
+  var x = $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this);
+  var this$5 = $m_s_Console$();
+  var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
+  this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+  return $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this)
+});
+$c_Llobos_Sobol.prototype.take = (function(arg$1) {
+  var prep0 = $uI(arg$1);
+  return this.$$js$exported$meth$take__I__O(prep0)
 });
 $c_Llobos_Sobol.prototype.next = (function() {
   return this.$$js$exported$meth$next__O()
-});
-Object.defineProperty($c_Llobos_Sobol.prototype, "hasNext", {
-  "get": (function() {
-    return this.$$js$exported$prop$hasNext__O()
-  }),
-  "enumerable": true
 });
 var $d_Llobos_Sobol = new $TypeData().initClass({
   Llobos_Sobol: 0
@@ -7162,6 +7362,50 @@ function $m_sc_Iterable$() {
   };
   return $n_sc_Iterable$
 }
+/** @constructor */
+function $c_sc_Iterator$$anon$10() {
+  $c_sc_AbstractIterator.call(this);
+  this.remaining$2 = 0;
+  this.$$outer$2 = null
+}
+$c_sc_Iterator$$anon$10.prototype = new $h_sc_AbstractIterator();
+$c_sc_Iterator$$anon$10.prototype.constructor = $c_sc_Iterator$$anon$10;
+/** @constructor */
+function $h_sc_Iterator$$anon$10() {
+  /*<skip>*/
+}
+$h_sc_Iterator$$anon$10.prototype = $c_sc_Iterator$$anon$10.prototype;
+$c_sc_Iterator$$anon$10.prototype.next__O = (function() {
+  if ((this.remaining$2 > 0)) {
+    this.remaining$2 = (((-1) + this.remaining$2) | 0);
+    return this.$$outer$2.next__O()
+  } else {
+    return $m_sc_Iterator$().empty$1.next__O()
+  }
+});
+$c_sc_Iterator$$anon$10.prototype.init___sc_Iterator__I__I = (function($$outer, lo$1, until$1) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$2 = $$outer
+  };
+  this.remaining$2 = ((until$1 - lo$1) | 0);
+  return this
+});
+$c_sc_Iterator$$anon$10.prototype.hasNext__Z = (function() {
+  return ((this.remaining$2 > 0) && this.$$outer$2.hasNext__Z())
+});
+var $d_sc_Iterator$$anon$10 = new $TypeData().initClass({
+  sc_Iterator$$anon$10: 0
+}, false, "scala.collection.Iterator$$anon$10", {
+  sc_Iterator$$anon$10: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_TraversableOnce: 1,
+  sc_GenTraversableOnce: 1
+});
+$c_sc_Iterator$$anon$10.prototype.$classData = $d_sc_Iterator$$anon$10;
 /** @constructor */
 function $c_sc_Iterator$$anon$2() {
   $c_sc_AbstractIterator.call(this)
@@ -7891,6 +8135,45 @@ var $d_sr_ScalaRunTime$$anon$1 = new $TypeData().initClass({
 });
 $c_sr_ScalaRunTime$$anon$1.prototype.$classData = $d_sr_ScalaRunTime$$anon$1;
 /** @constructor */
+function $c_Ljava_io_PrintStream() {
+  $c_Ljava_io_FilterOutputStream.call(this);
+  this.java$io$PrintStream$$autoFlush$f = false;
+  this.charset$3 = null;
+  this.java$io$PrintStream$$encoder$3 = null;
+  this.java$io$PrintStream$$closing$3 = false;
+  this.java$io$PrintStream$$closed$3 = false;
+  this.errorFlag$3 = false;
+  this.bitmap$0$3 = false
+}
+$c_Ljava_io_PrintStream.prototype = new $h_Ljava_io_FilterOutputStream();
+$c_Ljava_io_PrintStream.prototype.constructor = $c_Ljava_io_PrintStream;
+/** @constructor */
+function $h_Ljava_io_PrintStream() {
+  /*<skip>*/
+}
+$h_Ljava_io_PrintStream.prototype = $c_Ljava_io_PrintStream.prototype;
+$c_Ljava_io_PrintStream.prototype.init___Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset = (function(_out, autoFlush, charset) {
+  this.java$io$PrintStream$$autoFlush$f = autoFlush;
+  this.charset$3 = charset;
+  $c_Ljava_io_FilterOutputStream.prototype.init___Ljava_io_OutputStream.call(this, _out);
+  this.java$io$PrintStream$$closing$3 = false;
+  this.java$io$PrintStream$$closed$3 = false;
+  this.errorFlag$3 = false;
+  return this
+});
+function $is_Ljava_io_PrintStream(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Ljava_io_PrintStream)))
+}
+function $as_Ljava_io_PrintStream(obj) {
+  return (($is_Ljava_io_PrintStream(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.PrintStream"))
+}
+function $isArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ljava_io_PrintStream)))
+}
+function $asArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (($isArrayOf_Ljava_io_PrintStream(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.io.PrintStream;", depth))
+}
+/** @constructor */
 function $c_T2() {
   $c_O.call(this);
   this.$$und1$f = null;
@@ -8368,6 +8651,79 @@ var $d_sjsr_UndefinedBehaviorError = new $TypeData().initClass({
   s_util_control_NoStackTrace: 1
 });
 $c_sjsr_UndefinedBehaviorError.prototype.$classData = $d_sjsr_UndefinedBehaviorError;
+/** @constructor */
+function $c_jl_JSConsoleBasedPrintStream() {
+  $c_Ljava_io_PrintStream.call(this);
+  this.isErr$4 = null;
+  this.flushed$4 = false;
+  this.buffer$4 = null
+}
+$c_jl_JSConsoleBasedPrintStream.prototype = new $h_Ljava_io_PrintStream();
+$c_jl_JSConsoleBasedPrintStream.prototype.constructor = $c_jl_JSConsoleBasedPrintStream;
+/** @constructor */
+function $h_jl_JSConsoleBasedPrintStream() {
+  /*<skip>*/
+}
+$h_jl_JSConsoleBasedPrintStream.prototype = $c_jl_JSConsoleBasedPrintStream.prototype;
+$c_jl_JSConsoleBasedPrintStream.prototype.init___jl_Boolean = (function(isErr) {
+  this.isErr$4 = isErr;
+  var out = new $c_jl_JSConsoleBasedPrintStream$DummyOutputStream().init___();
+  $c_Ljava_io_PrintStream.prototype.init___Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset.call(this, out, false, null);
+  this.flushed$4 = true;
+  this.buffer$4 = "";
+  return this
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.java$lang$JSConsoleBasedPrintStream$$printString__T__V = (function(s) {
+  var rest = s;
+  while ((rest !== "")) {
+    var thiz = rest;
+    var nlPos = $uI(thiz.indexOf("\n"));
+    if ((nlPos < 0)) {
+      this.buffer$4 = (("" + this.buffer$4) + rest);
+      this.flushed$4 = false;
+      rest = ""
+    } else {
+      var jsx$1 = this.buffer$4;
+      var thiz$1 = rest;
+      this.doWriteLine__p4__T__V((("" + jsx$1) + $as_T(thiz$1.substring(0, nlPos))));
+      this.buffer$4 = "";
+      this.flushed$4 = true;
+      var thiz$2 = rest;
+      var beginIndex = ((1 + nlPos) | 0);
+      rest = $as_T(thiz$2.substring(beginIndex))
+    }
+  }
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.doWriteLine__p4__T__V = (function(line) {
+  var x = $g.console;
+  if ($uZ((!(!x)))) {
+    var x$1 = this.isErr$4;
+    if ($uZ(x$1)) {
+      var x$2 = $g.console.error;
+      var jsx$1 = $uZ((!(!x$2)))
+    } else {
+      var jsx$1 = false
+    };
+    if (jsx$1) {
+      $g.console.error(line)
+    } else {
+      $g.console.log(line)
+    }
+  }
+});
+var $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream", {
+  jl_JSConsoleBasedPrintStream: 1,
+  Ljava_io_PrintStream: 1,
+  Ljava_io_FilterOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  Ljava_io_Flushable: 1,
+  jl_Appendable: 1
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
 /** @constructor */
 function $c_s_reflect_ClassTag$ClassClassTag() {
   $c_O.call(this);

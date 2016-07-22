@@ -2005,7 +2005,24 @@ $c_Llobos_Sobol.prototype.take__I__sjs_js_Array = (function(n) {
   var this$15 = $m_s_Console$();
   var this$16 = $as_Ljava_io_PrintStream(this$15.outVar$2.v$1);
   this$16.java$lang$JSConsoleBasedPrintStream$$printString__T__V((jsArrays + "\n"));
-  return [jsArrays]
+  var col$1 = $m_s_Predef$().wrapRefArray__AO__scm_WrappedArray(jsArrays);
+  if ($is_sjs_js_ArrayOps(col$1)) {
+    var x2$1 = $as_sjs_js_ArrayOps(col$1);
+    return x2$1.scala$scalajs$js$ArrayOps$$array$f
+  } else if ($is_sjs_js_WrappedArray(col$1)) {
+    var x3$1 = $as_sjs_js_WrappedArray(col$1);
+    return x3$1.array$6
+  } else {
+    var result$1 = [];
+    var i$1 = 0;
+    var len$1 = col$1.length__I();
+    while ((i$1 < len$1)) {
+      var arg1$1 = col$1.apply__I__O(i$1);
+      $uI(result$1.push(arg1$1));
+      i$1 = ((1 + i$1) | 0)
+    };
+    return result$1
+  }
 });
 $c_Llobos_Sobol.prototype.$$js$exported$prop$next__O = (function() {
   return this.next__sjs_js_Array()
@@ -2364,6 +2381,16 @@ function $h_s_LowPriorityImplicits() {
   /*<skip>*/
 }
 $h_s_LowPriorityImplicits.prototype = $c_s_LowPriorityImplicits.prototype;
+$c_s_LowPriorityImplicits.prototype.wrapRefArray__AO__scm_WrappedArray = (function(xs) {
+  if ((xs === null)) {
+    return null
+  } else if ((xs.u.length === 0)) {
+    var this$1 = $m_scm_WrappedArray$();
+    return this$1.EmptyWrappedArray$1
+  } else {
+    return new $c_scm_WrappedArray$ofRef().init___AO(xs)
+  }
+});
 $c_s_LowPriorityImplicits.prototype.wrapLongArray__AJ__scm_WrappedArray = (function(xs) {
   return ((xs !== null) ? new $c_scm_WrappedArray$ofLong().init___AJ(xs) : null)
 });
@@ -3115,6 +3142,37 @@ function $m_scm_HashTable$() {
     $n_scm_HashTable$ = new $c_scm_HashTable$().init___()
   };
   return $n_scm_HashTable$
+}
+/** @constructor */
+function $c_scm_WrappedArray$() {
+  $c_O.call(this);
+  this.EmptyWrappedArray$1 = null
+}
+$c_scm_WrappedArray$.prototype = new $h_O();
+$c_scm_WrappedArray$.prototype.constructor = $c_scm_WrappedArray$;
+/** @constructor */
+function $h_scm_WrappedArray$() {
+  /*<skip>*/
+}
+$h_scm_WrappedArray$.prototype = $c_scm_WrappedArray$.prototype;
+$c_scm_WrappedArray$.prototype.init___ = (function() {
+  $n_scm_WrappedArray$ = this;
+  this.EmptyWrappedArray$1 = new $c_scm_WrappedArray$ofRef().init___AO($newArrayObject($d_O.getArrayOf(), [0]));
+  return this
+});
+var $d_scm_WrappedArray$ = new $TypeData().initClass({
+  scm_WrappedArray$: 0
+}, false, "scala.collection.mutable.WrappedArray$", {
+  scm_WrappedArray$: 1,
+  O: 1
+});
+$c_scm_WrappedArray$.prototype.$classData = $d_scm_WrappedArray$;
+var $n_scm_WrappedArray$ = (void 0);
+function $m_scm_WrappedArray$() {
+  if ((!$n_scm_WrappedArray$)) {
+    $n_scm_WrappedArray$ = new $c_scm_WrappedArray$().init___()
+  };
+  return $n_scm_WrappedArray$
 }
 /** @constructor */
 function $c_sjsr_Bits$() {

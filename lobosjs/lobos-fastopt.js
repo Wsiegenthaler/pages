@@ -6645,19 +6645,12 @@ function $h_Llobos_Sobol() {
 }
 $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.next__O = (function() {
-  return this.next__sc_IndexedSeq()
+  return this.next__sjs_js_WrappedArray()
 });
 $c_Llobos_Sobol.prototype.$$js$exported$meth$next__O = (function() {
-  return this.next__sc_IndexedSeq()
+  return this.next__sjs_js_WrappedArray()
 });
-$c_Llobos_Sobol.prototype.init___I = (function(dims) {
-  $c_Llobos_SobolSequence.prototype.init___I__J__Llobos_SobolParams.call(this, dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
-  return this
-});
-$c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
-  return $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this, 0, n)
-});
-$c_Llobos_Sobol.prototype.next__sc_IndexedSeq = (function() {
+$c_Llobos_Sobol.prototype.next__sjs_js_WrappedArray = (function() {
   var this$2 = $m_s_Console$();
   var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
   this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("next\n");
@@ -6665,7 +6658,31 @@ $c_Llobos_Sobol.prototype.next__sc_IndexedSeq = (function() {
   var this$5 = $m_s_Console$();
   var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
   this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-  return $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this)
+  var this$7 = $m_sjsr_package$();
+  var col = $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this);
+  if ($is_sjs_js_ArrayOps(col)) {
+    var x2 = $as_sjs_js_ArrayOps(col);
+    var array = x2.scala$scalajs$js$ArrayOps$$array$f
+  } else if ($is_sjs_js_WrappedArray(col)) {
+    var x3 = $as_sjs_js_WrappedArray(col);
+    var array = x3.array$6
+  } else {
+    var result = [];
+    col.foreach__F1__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, result$1) {
+      return (function(x$2) {
+        return $uI(result$1.push(x$2))
+      })
+    })(this$7, result)));
+    var array = result
+  };
+  return new $c_sjs_js_WrappedArray().init___sjs_js_Array(array)
+});
+$c_Llobos_Sobol.prototype.init___I = (function(dims) {
+  $c_Llobos_SobolSequence.prototype.init___I__J__Llobos_SobolParams.call(this, dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
+  return this
+});
+$c_Llobos_Sobol.prototype.$$js$exported$meth$take__I__O = (function(n) {
+  return $s_sc_Iterator$class__slice__sc_Iterator__I__I__sc_Iterator(this, 0, n)
 });
 $c_Llobos_Sobol.prototype.take = (function(arg$1) {
   var prep0 = $uI(arg$1);
@@ -10372,6 +10389,18 @@ function $h_scm_AbstractIterable() {
   /*<skip>*/
 }
 $h_scm_AbstractIterable.prototype = $c_scm_AbstractIterable.prototype;
+function $is_sjs_js_ArrayOps(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sjs_js_ArrayOps)))
+}
+function $as_sjs_js_ArrayOps(obj) {
+  return (($is_sjs_js_ArrayOps(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.scalajs.js.ArrayOps"))
+}
+function $isArrayOf_sjs_js_ArrayOps(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sjs_js_ArrayOps)))
+}
+function $asArrayOf_sjs_js_ArrayOps(obj, depth) {
+  return (($isArrayOf_sjs_js_ArrayOps(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.scalajs.js.ArrayOps;", depth))
+}
 function $is_sc_IndexedSeq(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_IndexedSeq)))
 }
@@ -14371,6 +14400,18 @@ $c_sjs_js_WrappedArray.prototype.init___sjs_js_Array = (function(array) {
 $c_sjs_js_WrappedArray.prototype.stringPrefix__T = (function() {
   return "WrappedArray"
 });
+function $is_sjs_js_WrappedArray(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sjs_js_WrappedArray)))
+}
+function $as_sjs_js_WrappedArray(obj) {
+  return (($is_sjs_js_WrappedArray(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.scalajs.js.WrappedArray"))
+}
+function $isArrayOf_sjs_js_WrappedArray(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sjs_js_WrappedArray)))
+}
+function $asArrayOf_sjs_js_WrappedArray(obj, depth) {
+  return (($isArrayOf_sjs_js_WrappedArray(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.scalajs.js.WrappedArray;", depth))
+}
 var $d_sjs_js_WrappedArray = new $TypeData().initClass({
   sjs_js_WrappedArray: 0
 }, false, "scala.scalajs.js.WrappedArray", {

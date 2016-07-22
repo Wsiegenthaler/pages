@@ -1900,10 +1900,7 @@ function $s_scm_ResizableArray$class__$$init$__scm_ResizableArray__V($$this) {
 /** @constructor */
 function $c_Llobos_SobolSequence$() {
   $c_O.call(this);
-  this.maxBits$1 = 0;
-  this.defaultParamPath$1 = null;
-  this.defaultParams$1 = null;
-  this.bitmap$0$1 = false
+  this.maxBits$1 = 0
 }
 $c_Llobos_SobolSequence$.prototype = new $h_O();
 $c_Llobos_SobolSequence$.prototype.constructor = $c_Llobos_SobolSequence$;
@@ -1914,7 +1911,6 @@ function $h_Llobos_SobolSequence$() {
 $h_Llobos_SobolSequence$.prototype = $c_Llobos_SobolSequence$.prototype;
 $c_Llobos_SobolSequence$.prototype.init___ = (function() {
   this.maxBits$1 = 64;
-  this.defaultParamPath$1 = "/new-joe-kuo-6.21201.gz";
   return this
 });
 $c_Llobos_SobolSequence$.prototype.bitsForVals__J__I = (function(n) {

@@ -3473,7 +3473,7 @@ function $h_Llobos_JsParams$() {
 $h_Llobos_JsParams$.prototype = $c_Llobos_JsParams$.prototype;
 $c_Llobos_JsParams$.prototype.init___ = (function() {
   $n_Llobos_JsParams$ = this;
-  var xs = new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Llobos_DimensionParams().init___I__J__sc_Seq(123, new $c_sjsr_RuntimeLong().init___I__I(123, 0), $m_s_Predef$().wrapLongArray__AJ__scm_WrappedArray($m_s_Array$().apply__J__sc_Seq__AJ(new $c_sjsr_RuntimeLong().init___I__I(1, 0), new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_sjsr_RuntimeLong().init___I__I(2, 0), new $c_sjsr_RuntimeLong().init___I__I(3, 0)]))))]);
+  var xs = new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Llobos_DimensionParams().init___I__J__sc_Seq(2, $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong(), $m_s_Predef$().wrapLongArray__AJ__scm_WrappedArray($m_s_Array$().apply__J__sc_Seq__AJ(new $c_sjsr_RuntimeLong().init___I__I(1, 0), new $c_sjs_js_WrappedArray().init___sjs_js_Array([]))))]);
   var len = $uI(xs.array$6.length);
   var array = $newArrayObject($d_Llobos_DimensionParams.getArrayOf(), [len]);
   var elem$1 = 0;

@@ -6456,12 +6456,27 @@ $h_Llobos_Sobol.prototype = $c_Llobos_Sobol.prototype;
 $c_Llobos_Sobol.prototype.next__O = (function() {
   return $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this)
 });
+$c_Llobos_Sobol.prototype.$$js$exported$meth$next__O = (function() {
+  return $c_Llobos_SobolSequence.prototype.next__sc_IndexedSeq.call(this)
+});
+$c_Llobos_Sobol.prototype.$$js$exported$prop$hasNext__O = (function() {
+  return $c_Llobos_SobolSequence.prototype.hasNext__Z.call(this)
+});
 $c_Llobos_Sobol.prototype.init___I = (function(dims) {
   $c_Llobos_SobolSequence.prototype.init___I__J__Llobos_SobolParams.call(this, dims, $m_Llobos_SobolSequence$().$$lessinit$greater$default$2__J(), $m_Llobos_JsParams$());
   return this
 });
 $c_Llobos_Sobol.prototype.hasNext__Z = (function() {
   return $c_Llobos_SobolSequence.prototype.hasNext__Z.call(this)
+});
+$c_Llobos_Sobol.prototype.next = (function() {
+  return this.$$js$exported$meth$next__O()
+});
+Object.defineProperty($c_Llobos_Sobol.prototype, "hasNext", {
+  "get": (function() {
+    return this.$$js$exported$prop$hasNext__O()
+  }),
+  "enumerable": true
 });
 var $d_Llobos_Sobol = new $TypeData().initClass({
   Llobos_Sobol: 0

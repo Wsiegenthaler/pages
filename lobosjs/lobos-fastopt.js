@@ -2137,6 +2137,65 @@ function $m_Llobos_SobolSequence$() {
   return $n_Llobos_SobolSequence$
 }
 /** @constructor */
+function $c_Llobos_Test$() {
+  $c_O.call(this);
+  this.n$1 = 0
+}
+$c_Llobos_Test$.prototype = new $h_O();
+$c_Llobos_Test$.prototype.constructor = $c_Llobos_Test$;
+/** @constructor */
+function $h_Llobos_Test$() {
+  /*<skip>*/
+}
+$h_Llobos_Test$.prototype = $c_Llobos_Test$.prototype;
+$c_Llobos_Test$.prototype.init___ = (function() {
+  this.n$1 = 123;
+  return this
+});
+$c_Llobos_Test$.prototype.$$js$exported$prop$n__O = (function() {
+  return this.n$1
+});
+$c_Llobos_Test$.prototype.$$js$exported$prop$n__I__O = (function(x$1) {
+  this.n$1 = x$1
+});
+$c_Llobos_Test$.prototype.$$js$exported$meth$doCallback__sjs_js_Function1__O = (function(cb) {
+  this.doCallback__sjs_js_Function1__V(cb)
+});
+$c_Llobos_Test$.prototype.doCallback__sjs_js_Function1__V = (function(cb) {
+  var nextInc = $uI(cb(this.n$1));
+  this.n$1 = ((this.n$1 + nextInc) | 0)
+});
+$c_Llobos_Test$.prototype.doCallback = (function(arg$1) {
+  var prep0 = arg$1;
+  return this.$$js$exported$meth$doCallback__sjs_js_Function1__O(prep0)
+});
+Object.defineProperty($c_Llobos_Test$.prototype, "n", {
+  "set": (function(arg$1) {
+    var prep0 = $uI(arg$1);
+    this.$$js$exported$prop$n__I__O(prep0)
+  }),
+  "get": (function() {
+    return this.$$js$exported$prop$n__O()
+  }),
+  "enumerable": true
+});
+var $d_Llobos_Test$ = new $TypeData().initClass({
+  Llobos_Test$: 0
+}, false, "lobos.Test$", {
+  Llobos_Test$: 1,
+  O: 1
+});
+$c_Llobos_Test$.prototype.$classData = $d_Llobos_Test$;
+var $n_Llobos_Test$ = (void 0);
+function $m_Llobos_Test$() {
+  if ((!$n_Llobos_Test$)) {
+    $n_Llobos_Test$ = new $c_Llobos_Test$().init___()
+  };
+  return $n_Llobos_Test$
+}
+$e.lobos = ($e.lobos || {});
+$e.lobos.Test = $m_Llobos_Test$;
+/** @constructor */
 function $c_jl_Class() {
   $c_O.call(this);
   this.data$1 = null

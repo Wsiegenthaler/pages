@@ -1226,17 +1226,6 @@
 	    j = ((1 + j) | 0)
 	  }
 	});
-	const $s_sc_IndexedSeqOptimized$class__zipWithIndex__sc_IndexedSeqOptimized__scg_CanBuildFrom__O = (function($$this, bf) {
-	  const b = bf.apply__O__scm_Builder($$this.repr__O());
-	  const len = $$this.length__I();
-	  b.sizeHint__I__V(len);
-	  let i = 0;
-	  while ((i < len)) {
-	    b.$$plus$eq__O__scm_Builder(new $c_T2().init___O__O($$this.apply__I__O(i), i));
-	    i = ((1 + i) | 0)
-	  };
-	  return b.result__O()
-	});
 	const $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z = (function($$this, that) {
 	  if ($is_sc_IndexedSeq(that)) {
 	    const x2 = that;
@@ -1437,8 +1426,7 @@
 	  while ((!these.isEmpty__Z())) {
 	    const arg1 = these.head__O();
 	    b.$$plus$eq__O__scm_Builder(arg1);
-	    const this$4 = these;
-	    these = this$4.tail__sci_List()
+	    these = these.tail__O()
 	  };
 	  return b.result__O()
 	});
@@ -2678,8 +2666,7 @@
 	    let elems = xs;
 	    while ((!elems.isEmpty__Z())) {
 	      const head = elems.head__O();
-	      const this$1 = elems;
-	      const tail = this$1.tail__sci_List();
+	      const tail = elems.tail__O();
 	      h = this.mix__I__I__I(h, $m_sr_ScalaRunTime$().hash__O__I(head));
 	      n = ((1 + n) | 0);
 	      elems = tail
@@ -3635,7 +3622,7 @@
 	    return ((1 + this.dimParams$1.u.length) | 0)
 	  };
 	  getParams__I__Llobos_DimensionParams(dim) {
-	    return this.dimParams$1.u[(((-1) + dim) | 0)]
+	    return this.dimParams$1.u[(((-2) + dim) | 0)]
 	  };
 	}
 	const $d_Llobos_JsParams$ = new $TypeData().initClass({
@@ -5574,7 +5561,10 @@
 	        }
 	      }
 	    };
-	    this.directionsByDim$1 = b.result__sci_Vector();
+	    const this$10 = b.result__sci_Vector();
+	    $m_sci_IndexedSeq$();
+	    const bf$1 = $m_sc_IndexedSeq$().ReusableCBF$6;
+	    this.directionsByDim$1 = $s_sc_IterableLike$class__zipWithIndex__sc_IterableLike__scg_CanBuildFrom__O(this$10, bf$1);
 	    return this
 	  };
 	  toStream__sci_Stream() {
@@ -5607,7 +5597,8 @@
 	      const x2 = x1;
 	      const _last = x2.x$2;
 	      const c = $m_Llobos_SobolSequence$().rightMostZero__J__I(new $c_sjsr_RuntimeLong().init___I((((-1) + this.count$1) | 0)));
-	      x$3 = this.directionsByDim$1.zipWithIndex__scg_CanBuildFrom__O(($m_sci_IndexedSeq$(), $m_sc_IndexedSeq$().ReusableCBF$6)).map__F1__scg_CanBuildFrom__O(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(_last$1, c$1) {
+	      const this$3 = this.directionsByDim$1;
+	      const f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(_last$1, c$1) {
 	        return (function(x0$2$2) {
 	          const x0$2 = x0$2$2;
 	          if ((x0$2 !== null)) {
@@ -5618,13 +5609,16 @@
 	            throw new $c_s_MatchError().init___O(x0$2)
 	          }
 	        })
-	      })(_last, c)), ($m_sci_IndexedSeq$(), $m_sc_IndexedSeq$().ReusableCBF$6))
+	      })(_last, c));
+	      $m_sci_IndexedSeq$();
+	      const bf = $m_sc_IndexedSeq$().ReusableCBF$6;
+	      x$3 = $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$3, f, bf)
 	    } else {
 	      throw new $c_s_MatchError().init___O(x1)
 	    };
 	    this.count$1 = ((1 + this.count$1) | 0);
 	    this.lastX$1 = new $c_s_Some().init___O(x$3);
-	    const f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(arg$outer) {
+	    const f$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(arg$outer) {
 	      return (function(x$1$2) {
 	        const x$1 = $uJ(x$1$2);
 	        const y = arg$outer.bits$1;
@@ -5632,8 +5626,8 @@
 	      })
 	    })(this));
 	    $m_sci_IndexedSeq$();
-	    const bf = $m_sc_IndexedSeq$().ReusableCBF$6;
-	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(x$3, f, bf)
+	    const bf$1 = $m_sc_IndexedSeq$().ReusableCBF$6;
+	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(x$3, f$1, bf$1)
 	  };
 	}
 	const $d_Llobos_SobolSequence = new $TypeData().initClass({
@@ -6173,12 +6167,12 @@
 	  result__O() {
 	    return this.elems$1
 	  };
+	  sizeHintBounded__I__sc_TraversableLike__V(size, boundingColl) {
+	    $s_scm_Builder$class__sizeHintBounded__scm_Builder__I__sc_TraversableLike__V(this, size, boundingColl)
+	  };
 	  $$plus$eq__O__scm_SetBuilder(x) {
 	    this.elems$1 = this.elems$1.$$plus__O__sc_Set(x);
 	    return this
-	  };
-	  sizeHintBounded__I__sc_TraversableLike__V(size, boundingColl) {
-	    $s_scm_Builder$class__sizeHintBounded__scm_Builder__I__sc_TraversableLike__V(this, size, boundingColl)
 	  };
 	  init___sc_Set(empty) {
 	    this.empty$1 = empty;
@@ -8006,12 +8000,12 @@
 	  sizeHintBounded__I__sc_TraversableLike__V(size, boundColl) {
 	    this.self$1.sizeHintBounded__I__sc_TraversableLike__V(size, boundColl)
 	  };
+	  $$plus$eq__O__scm_Builder(elem) {
+	    return this.$$plus$eq__O__scm_Builder$$anon$1(elem)
+	  };
 	  $$plus$eq__O__scm_Builder$$anon$1(x) {
 	    this.self$1.$$plus$eq__O__scm_Builder(x);
 	    return this
-	  };
-	  $$plus$eq__O__scm_Builder(elem) {
-	    return this.$$plus$eq__O__scm_Builder$$anon$1(elem)
 	  };
 	  hashCode__I() {
 	    return this.self$1.hashCode__I()
@@ -8091,8 +8085,7 @@
 	      throw new $c_ju_NoSuchElementException().init___T("next on empty Iterator")
 	    } else {
 	      const ans = this.cursor$2.head__O();
-	      const this$1 = this.cursor$2;
-	      this.cursor$2 = this$1.tail__sci_List();
+	      this.cursor$2 = this.cursor$2.tail__O();
 	      return ans
 	    }
 	  };
@@ -8387,12 +8380,6 @@
 	  Ljava_io_Serializable: 1
 	});
 	$c_s_StringContext$InvalidEscapeException.prototype.$classData = $d_s_StringContext$InvalidEscapeException;
-	const $is_sc_TraversableLike = (function(obj) {
-	  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_TraversableLike)))
-	});
-	const $isArrayOf_sc_TraversableLike = (function(obj, depth) {
-	  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sc_TraversableLike)))
-	});
 	class $c_scg_SeqFactory extends $c_scg_GenSeqFactory {
 	}
 	class $c_sci_HashSet$HashTrieSet$$anon$1 extends $c_sci_TrieIterator {
@@ -9887,9 +9874,6 @@
 	  isTraversableAgain__Z() {
 	    return true
 	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
-	  };
 	  toArray__s_reflect_ClassTag__O(evidence$1) {
 	    return $s_sc_TraversableOnce$class__toArray__sc_TraversableOnce__s_reflect_ClassTag__O(this, evidence$1)
 	  };
@@ -9935,9 +9919,6 @@
 	  foreach__F1__V(f) {
 	    const this$1 = this.iterator__sc_Iterator();
 	    $s_sc_Iterator$class__foreach__sc_Iterator__F1__V(this$1, f)
-	  };
-	  zipWithIndex__scg_CanBuildFrom__O(bf) {
-	    return $s_sc_IterableLike$class__zipWithIndex__sc_IterableLike__scg_CanBuildFrom__O(this, bf)
 	  };
 	  toStream__sci_Stream() {
 	    return this.iterator__sc_Iterator().toStream__sci_Stream()
@@ -10023,12 +10004,12 @@
 	  foreach__F1__V(f) {
 	    $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 	  };
+	  toBuffer__scm_Buffer() {
+	    return $s_sc_IndexedSeqLike$class__toBuffer__sc_IndexedSeqLike__scm_Buffer(this)
+	  };
 	  size__I() {
 	    const $$this = this.repr$1;
 	    return ($$this.length | 0)
-	  };
-	  toBuffer__scm_Buffer() {
-	    return $s_sc_IndexedSeqLike$class__toBuffer__sc_IndexedSeqLike__scm_Buffer(this)
 	  };
 	  iterator__sc_Iterator() {
 	    const $$this = this.repr$1;
@@ -10062,9 +10043,6 @@
 	  init___T(repr) {
 	    this.repr$1 = repr;
 	    return this
-	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
 	  };
 	  newBuilder__scm_Builder() {
 	    return new $c_scm_StringBuilder().init___()
@@ -10150,12 +10128,12 @@
 	  foreach__F1__V(f) {
 	    $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 	  };
+	  toBuffer__scm_Buffer() {
+	    return $s_sc_IndexedSeqLike$class__toBuffer__sc_IndexedSeqLike__scm_Buffer(this)
+	  };
 	  size__I() {
 	    const $$this = this.repr$1;
 	    return $$this.u.length
-	  };
-	  toBuffer__scm_Buffer() {
-	    return $s_sc_IndexedSeqLike$class__toBuffer__sc_IndexedSeqLike__scm_Buffer(this)
 	  };
 	  init___AO(repr) {
 	    this.repr$1 = repr;
@@ -10189,9 +10167,6 @@
 	  };
 	  isTraversableAgain__Z() {
 	    return true
-	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
 	  };
 	  newBuilder__scm_Builder() {
 	    const $$this = this.repr$1;
@@ -10297,9 +10272,6 @@
 	  hashCode__I() {
 	    const this$1 = $m_s_util_hashing_MurmurHash3$();
 	    return this$1.unorderedHash__sc_TraversableOnce__I__I(this, this$1.setSeed$2)
-	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
 	  };
 	  newBuilder__scm_Builder() {
 	    return new $c_scm_SetBuilder().init___sc_Set(this.empty__sc_Set())
@@ -11053,11 +11025,11 @@
 	      }
 	    }
 	  };
-	  $$plus__O__sc_Set(elem) {
-	    return this.$$plus__O__sci_ListSet(elem)
-	  };
 	  tail__sci_ListSet() {
 	    return this.$$outer$f
+	  };
+	  $$plus__O__sc_Set(elem) {
+	    return this.$$plus__O__sci_ListSet(elem)
 	  };
 	}
 	const $d_sci_ListSet$Node = new $TypeData().initClass({
@@ -11516,8 +11488,7 @@
 	    let these = this;
 	    while ((!these.isEmpty__Z())) {
 	      f.apply__O__O(these.head__O());
-	      const this$1 = these;
-	      these = this$1.tail__sci_List()
+	      these = these.tail__O()
 	    }
 	  };
 	  iterator__sc_Iterator() {
@@ -11527,8 +11498,7 @@
 	    let these = this;
 	    let count = n;
 	    while (((!these.isEmpty__Z()) && (count > 0))) {
-	      const this$1 = these;
-	      these = this$1.tail__sci_List();
+	      these = these.tail__O();
 	      count = (((-1) + count) | 0)
 	    };
 	    return these
@@ -11542,33 +11512,12 @@
 	  toStream__sci_Stream() {
 	    return (this.isEmpty__Z() ? $m_sci_Stream$Empty$() : new $c_sci_Stream$Cons().init___O__F0(this.head__O(), new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this) {
 	      return (function() {
-	        return $this.tail__sci_List().toStream__sci_Stream()
+	        return $this.tail__O().toStream__sci_Stream()
 	      })
 	    })(this))))
 	  };
 	  hashCode__I() {
 	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
-	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    if ((bf === $m_sci_List$().ReusableCBFInstance$2)) {
-	      if ((this === $m_sci_Nil$())) {
-	        return $m_sci_Nil$()
-	      } else {
-	        const h = new $c_sci_$colon$colon().init___O__sci_List(f.apply__O__O(this.head__O()), $m_sci_Nil$());
-	        let t = h;
-	        let rest = this.tail__sci_List();
-	        while ((rest !== $m_sci_Nil$())) {
-	          const nx = new $c_sci_$colon$colon().init___O__sci_List(f.apply__O__O(rest.head__O()), $m_sci_Nil$());
-	          t.tl$5 = nx;
-	          t = nx;
-	          const this$1 = rest;
-	          rest = this$1.tail__sci_List()
-	        };
-	        return h
-	      }
-	    } else {
-	      return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
-	    }
 	  };
 	  stringPrefix__T() {
 	    return "List"
@@ -11777,26 +11726,6 @@
 	  };
 	  hashCode__I() {
 	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
-	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    if ($is_sci_Stream$StreamBuilder(bf.apply__O__scm_Builder(this))) {
-	      let x$1;
-	      if (this.isEmpty__Z()) {
-	        x$1 = $m_sci_Stream$Empty$()
-	      } else {
-	        const hd = f.apply__O__O(this.head__O());
-	        const tl = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, f$1) {
-	          return (function() {
-	            const x = $this.tail__O().map__F1__scg_CanBuildFrom__O(f$1, ($m_sci_Stream$(), new $c_sci_Stream$StreamCanBuildFrom().init___()));
-	            return x
-	          })
-	        })(this, f));
-	        x$1 = new $c_sci_Stream$Cons().init___O__F0(hd, tl)
-	      };
-	      return x$1
-	    } else {
-	      return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
-	    }
 	  };
 	  append__F0__sci_Stream(rest) {
 	    if (this.isEmpty__Z()) {
@@ -12010,22 +11939,22 @@
 	      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + index))
 	    }
 	  };
-	  seq__sc_TraversableOnce() {
-	    return this
-	  };
 	  display3__AO() {
 	    return this.display3$4
+	  };
+	  seq__sc_TraversableOnce() {
+	    return this
 	  };
 	  apply__I__O(index) {
 	    const idx = this.checkRangeConvert__p4__I__I(index);
 	    const xor = (idx ^ this.focus$4);
 	    return $s_sci_VectorPointer$class__getElem__sci_VectorPointer__I__I__O(this, idx, xor)
 	  };
-	  lengthCompare__I__I(len) {
-	    return ((this.length__I() - len) | 0)
-	  };
 	  depth__I() {
 	    return this.depth$4
+	  };
+	  lengthCompare__I__I(len) {
+	    return ((this.length__I() - len) | 0)
 	  };
 	  apply__O__O(v1) {
 	    return this.apply__I__O((v1 | 0))
@@ -12062,11 +11991,11 @@
 	  display0__AO() {
 	    return this.display0$4
 	  };
-	  display4__AO() {
-	    return this.display4$4
-	  };
 	  display2$und$eq__AO__V(x$1) {
 	    this.display2$4 = x$1
+	  };
+	  display4__AO() {
+	    return this.display4$4
 	  };
 	  toBuffer__scm_Buffer() {
 	    return $s_sc_IndexedSeqLike$class__toBuffer__sc_IndexedSeqLike__scm_Buffer(this)
@@ -12077,11 +12006,11 @@
 	  display1$und$eq__AO__V(x$1) {
 	    this.display1$4 = x$1
 	  };
-	  seq__sc_Seq() {
-	    return this
-	  };
 	  length__I() {
 	    return ((this.endIndex$4 - this.startIndex$4) | 0)
+	  };
+	  seq__sc_Seq() {
+	    return this
 	  };
 	  display4$und$eq__AO__V(x$1) {
 	    this.display4$4 = x$1
@@ -12171,14 +12100,14 @@
 	  lengthCompare__I__I(len) {
 	    return $s_sc_IndexedSeqOptimized$class__lengthCompare__sc_IndexedSeqOptimized__I__I(this, len)
 	  };
-	  sameElements__sc_GenIterable__Z(that) {
-	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
-	  };
 	  apply__O__O(v1) {
 	    const n = (v1 | 0);
 	    const thiz = this.self$4;
 	    const c = (65535 & (thiz.charCodeAt(n) | 0));
 	    return new $c_jl_Character().init___C(c)
+	  };
+	  sameElements__sc_GenIterable__Z(that) {
+	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
 	  };
 	  isEmpty__Z() {
 	    return $s_sc_IndexedSeqOptimized$class__isEmpty__sc_IndexedSeqOptimized__Z(this)
@@ -12186,11 +12115,11 @@
 	  thisCollection__sc_Traversable() {
 	    return this
 	  };
-	  companion__scg_GenericCompanion() {
-	    return $m_sci_IndexedSeq$()
-	  };
 	  toString__T() {
 	    return this.self$4
+	  };
+	  companion__scg_GenericCompanion() {
+	    return $m_sci_IndexedSeq$()
 	  };
 	  foreach__F1__V(f) {
 	    $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
@@ -12202,21 +12131,18 @@
 	    const thiz = this.self$4;
 	    return new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, (thiz.length | 0))
 	  };
-	  zipWithIndex__scg_CanBuildFrom__O(bf) {
-	    return $s_sc_IndexedSeqOptimized$class__zipWithIndex__sc_IndexedSeqOptimized__scg_CanBuildFrom__O(this, bf)
+	  seq__sc_Seq() {
+	    return this
 	  };
 	  length__I() {
 	    const thiz = this.self$4;
 	    return (thiz.length | 0)
 	  };
-	  seq__sc_Seq() {
-	    return this
+	  copyToArray__O__I__I__V(xs, start, len) {
+	    $s_sc_IndexedSeqOptimized$class__copyToArray__sc_IndexedSeqOptimized__O__I__I__V(this, xs, start, len)
 	  };
 	  hashCode__I() {
 	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
-	  };
-	  copyToArray__O__I__I__V(xs, start, len) {
-	    $s_sc_IndexedSeqOptimized$class__copyToArray__sc_IndexedSeqOptimized__O__I__I__V(this, xs, start, len)
 	  };
 	  init___T(self) {
 	    this.self$4 = self;
@@ -12285,9 +12211,6 @@
 	  };
 	  isEmpty__Z() {
 	    return false
-	  };
-	  tail__sci_List() {
-	    return this.tl$5
 	  };
 	  productElement__I__O(x$1) {
 	    switch (x$1) {
@@ -12476,9 +12399,6 @@
 	  sizeHint__I__V(size) {
 	    /*<skip>*/
 	  };
-	  map__F1__scg_CanBuildFrom__O(f, bf) {
-	    return $s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this, f, bf)
-	  };
 	  newBuilder__scm_Builder() {
 	    return new $c_scm_HashSet().init___()
 	  };
@@ -12504,11 +12424,11 @@
 	  sameElements__sc_GenIterable__Z(that) {
 	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
 	  };
-	  thisCollection__sc_Traversable() {
-	    return this
-	  };
 	  isEmpty__Z() {
 	    return $s_sc_IndexedSeqOptimized$class__isEmpty__sc_IndexedSeqOptimized__Z(this)
+	  };
+	  thisCollection__sc_Traversable() {
+	    return this
 	  };
 	  companion__scg_GenericCompanion() {
 	    return $m_scm_IndexedSeq$()
@@ -12565,11 +12485,11 @@
 	  sameElements__sc_GenIterable__Z(that) {
 	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
 	  };
-	  thisCollection__sc_Traversable() {
-	    return this
-	  };
 	  isEmpty__Z() {
 	    return $s_sc_IndexedSeqOptimized$class__isEmpty__sc_IndexedSeqOptimized__Z(this)
+	  };
+	  thisCollection__sc_Traversable() {
+	    return this
 	  };
 	  companion__scg_GenericCompanion() {
 	    return $m_scm_ArraySeq$()
@@ -12601,15 +12521,15 @@
 	  length__I() {
 	    return this.length$5
 	  };
+	  hashCode__I() {
+	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
+	  };
 	  copyToArray__O__I__I__V(xs, start, len) {
 	    const that = (($m_sr_ScalaRunTime$().array$undlength__O__I(xs) - start) | 0);
 	    const x = ((len < that) ? len : that);
 	    const that$1 = this.length$5;
 	    const len1 = ((x < that$1) ? x : that$1);
 	    $m_s_Array$().copy__O__I__O__I__I__V(this.array$5, 0, xs, start, len1)
-	  };
-	  hashCode__I() {
-	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
 	  };
 	}
 	const $d_scm_ArraySeq = new $TypeData().initClass({
@@ -13684,8 +13604,7 @@
 	    this.clear__V();
 	    while ((cursor !== limit)) {
 	      this.$$plus$eq__O__scm_ListBuffer(cursor.head__O());
-	      const this$2 = cursor;
-	      cursor = this$2.tail__sci_List()
+	      cursor = cursor.tail__O()
 	    }
 	  };
 	  init___() {
@@ -13746,8 +13665,7 @@
 	    let these = this$1;
 	    while ((!these.isEmpty__Z())) {
 	      f.apply__O__O(these.head__O());
-	      const this$2 = these;
-	      these = this$2.tail__sci_List()
+	      these = these.tail__O()
 	    }
 	  };
 	  toBuffer__scm_Buffer() {
@@ -13920,15 +13838,15 @@
 	  lengthCompare__I__I(len) {
 	    return $s_sc_IndexedSeqOptimized$class__lengthCompare__sc_IndexedSeqOptimized__I__I(this, len)
 	  };
+	  sameElements__sc_GenIterable__Z(that) {
+	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
+	  };
 	  apply__O__O(v1) {
 	    const index = (v1 | 0);
 	    const this$1 = this.underlying$5;
 	    const thiz = this$1.content$1;
 	    const c = (65535 & (thiz.charCodeAt(index) | 0));
 	    return new $c_jl_Character().init___C(c)
-	  };
-	  sameElements__sc_GenIterable__Z(that) {
-	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
 	  };
 	  isEmpty__Z() {
 	    return $s_sc_IndexedSeqOptimized$class__isEmpty__sc_IndexedSeqOptimized__Z(this)
@@ -13951,12 +13869,12 @@
 	    };
 	    return this.$$plus$eq__C__scm_StringBuilder(jsx$1)
 	  };
+	  companion__scg_GenericCompanion() {
+	    return $m_scm_IndexedSeq$()
+	  };
 	  toString__T() {
 	    const this$1 = this.underlying$5;
 	    return this$1.content$1
-	  };
-	  companion__scg_GenericCompanion() {
-	    return $m_scm_IndexedSeq$()
 	  };
 	  foreach__F1__V(f) {
 	    $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
@@ -13972,13 +13890,13 @@
 	    this.underlying$5.append__T__jl_StringBuilder(s);
 	    return this
 	  };
-	  seq__scm_Seq() {
-	    return this
-	  };
 	  iterator__sc_Iterator() {
 	    const this$1 = this.underlying$5;
 	    const thiz = this$1.content$1;
 	    return new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, (thiz.length | 0))
+	  };
+	  seq__scm_Seq() {
+	    return this
 	  };
 	  sizeHintBounded__I__sc_TraversableLike__V(size, boundingColl) {
 	    $s_scm_Builder$class__sizeHintBounded__scm_Builder__I__sc_TraversableLike__V(this, size, boundingColl)
@@ -13987,13 +13905,13 @@
 	    $c_scm_StringBuilder.prototype.init___jl_StringBuilder.call(this, new $c_jl_StringBuilder().init___I((((initValue.length | 0) + initCapacity) | 0)).append__T__jl_StringBuilder(initValue));
 	    return this
 	  };
-	  seq__sc_Seq() {
-	    return this
-	  };
 	  length__I() {
 	    const this$1 = this.underlying$5;
 	    const thiz = this$1.content$1;
 	    return (thiz.length | 0)
+	  };
+	  seq__sc_Seq() {
+	    return this
 	  };
 	  init___jl_StringBuilder(underlying) {
 	    this.underlying$5 = underlying;
@@ -14153,11 +14071,11 @@
 	    this.array$6.push(elem);
 	    return this
 	  };
-	  copyToArray__O__I__I__V(xs, start, len) {
-	    $s_sc_IndexedSeqOptimized$class__copyToArray__sc_IndexedSeqOptimized__O__I__I__V(this, xs, start, len)
-	  };
 	  sizeHint__I__V(size) {
 	    /*<skip>*/
+	  };
+	  copyToArray__O__I__I__V(xs, start, len) {
+	    $s_sc_IndexedSeqOptimized$class__copyToArray__sc_IndexedSeqOptimized__O__I__I__V(this, xs, start, len)
 	  };
 	  hashCode__I() {
 	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
@@ -14242,15 +14160,15 @@
 	  seq__sc_TraversableOnce() {
 	    return this
 	  };
-	  init___() {
-	    $c_scm_ArrayBuffer.prototype.init___I.call(this, 16);
-	    return this
-	  };
 	  $$plus$eq__O__scm_ArrayBuffer(elem) {
 	    const n = ((1 + this.size0$6) | 0);
 	    $s_scm_ResizableArray$class__ensureSize__scm_ResizableArray__I__V(this, n);
 	    this.array$6.u[this.size0$6] = elem;
 	    this.size0$6 = ((1 + this.size0$6) | 0);
+	    return this
+	  };
+	  init___() {
+	    $c_scm_ArrayBuffer.prototype.init___I.call(this, 16);
 	    return this
 	  };
 	  apply__I__O(idx) {
@@ -14259,12 +14177,12 @@
 	  lengthCompare__I__I(len) {
 	    return $s_sc_IndexedSeqOptimized$class__lengthCompare__sc_IndexedSeqOptimized__I__I(this, len)
 	  };
+	  sameElements__sc_GenIterable__Z(that) {
+	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
+	  };
 	  apply__O__O(v1) {
 	    const idx = (v1 | 0);
 	    return $s_scm_ResizableArray$class__apply__scm_ResizableArray__I__O(this, idx)
-	  };
-	  sameElements__sc_GenIterable__Z(that) {
-	    return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
 	  };
 	  isEmpty__Z() {
 	    return $s_sc_IndexedSeqOptimized$class__isEmpty__sc_IndexedSeqOptimized__Z(this)
@@ -14287,25 +14205,25 @@
 	  result__O() {
 	    return this
 	  };
+	  iterator__sc_Iterator() {
+	    return new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, this.size0$6)
+	  };
 	  seq__scm_Seq() {
 	    return this
 	  };
-	  iterator__sc_Iterator() {
-	    return new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, this.size0$6)
+	  sizeHintBounded__I__sc_TraversableLike__V(size, boundingColl) {
+	    $s_scm_Builder$class__sizeHintBounded__scm_Builder__I__sc_TraversableLike__V(this, size, boundingColl)
 	  };
 	  init___I(initialSize) {
 	    this.initialSize$6 = initialSize;
 	    $s_scm_ResizableArray$class__$$init$__scm_ResizableArray__V(this);
 	    return this
 	  };
-	  sizeHintBounded__I__sc_TraversableLike__V(size, boundingColl) {
-	    $s_scm_Builder$class__sizeHintBounded__scm_Builder__I__sc_TraversableLike__V(this, size, boundingColl)
+	  length__I() {
+	    return this.size0$6
 	  };
 	  seq__sc_Seq() {
 	    return this
-	  };
-	  length__I() {
-	    return this.size0$6
 	  };
 	  $$plus$plus$eq__sc_TraversableOnce__scm_ArrayBuffer(xs) {
 	    if ($is_sc_IndexedSeqLike(xs)) {
@@ -14323,6 +14241,9 @@
 	  $$plus$eq__O__scm_Builder(elem) {
 	    return this.$$plus$eq__O__scm_ArrayBuffer(elem)
 	  };
+	  copyToArray__O__I__I__V(xs, start, len) {
+	    $s_scm_ResizableArray$class__copyToArray__scm_ResizableArray__O__I__I__V(this, xs, start, len)
+	  };
 	  sizeHint__I__V(len) {
 	    if (((len > this.size0$6) && (len >= 1))) {
 	      const newarray = $newArrayObject($d_O.getArrayOf(), [len]);
@@ -14331,9 +14252,6 @@
 	      $systemArraycopy(src, 0, newarray, 0, length);
 	      this.array$6 = newarray
 	    }
-	  };
-	  copyToArray__O__I__I__V(xs, start, len) {
-	    $s_scm_ResizableArray$class__copyToArray__scm_ResizableArray__O__I__I__V(this, xs, start, len)
 	  };
 	  hashCode__I() {
 	    return $m_s_util_hashing_MurmurHash3$().seqHash__sc_Seq__I(this)
